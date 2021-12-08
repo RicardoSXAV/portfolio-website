@@ -13,11 +13,20 @@ export const NavbarContainer = styled.div`
   border-radius: 20px;
 `;
 
-export const Button = styled.button`
+type ButtonProps = {
+  active?: boolean;
+};
+
+export const Button = styled.button<ButtonProps>`
   padding: 0.8rem 2rem;
 
   font-size: 1rem;
   font-weight: 700;
 
+  background-color: ${(props) => props.active && `${COLORS.blueGrotto}`};
   border-radius: 5rem;
+
+  &:hover {
+    cursor: pointer;
+  }
 `;
